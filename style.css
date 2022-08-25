@@ -1,0 +1,228 @@
+
+body
+{
+    background: #eeebeb;
+    color: #222;
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+    margin: 0;
+    padding: 0;
+}
+.chatbox-wrapper
+{
+    position: fixed;
+    bottom: 2rem;
+    right: 2rem;
+    width: 4rem;
+    height: 4rem;
+}
+.chatbox-toggle
+{
+    width: 100%;
+    height: 100%;
+    background: rgb(0, 119, 255);
+    color: #fff;
+    font-size: 2rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 50%;
+    cursor: pointer;
+    transition: 0.2s;
+}
+.chatbox-toggle:active
+{
+    transform: scale(0.9);
+}
+.chatbox-message-wrapper
+{
+    position: absolute;
+    bottom: calc(100% + 1rem);
+    right: 0;
+    width: 420px;
+    border-radius: 0.5rem;
+    overflow: hidden;
+    box-shadow: .5rem .5rem .2rem rgba(0, 0, 0, 0.2);
+    transform: scale(0);
+    transform-origin: bottom right;
+    transition: .2s;
+}
+.chatbox-message-wrapper.show
+{
+    transform: scale(1);
+}
+.chatbox-message-header
+{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    background: #fff;
+    padding: 0.75rem 1.5rem;
+}
+.chatbox-message-profile
+{
+    height: 50px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    grid-gap: 0.5rem;
+}
+.chatbox-message-image
+{
+    width: 3rem;
+    height: 3rem;
+    object-fit: cover;
+    border-radius: 50%;
+}
+.chatbox-message-name
+{
+    font-size: 1.125rem;
+    font-weight: 700;
+}
+.chatbox-message-status
+{
+    font-size: 0.875rem;
+    color: rgb(184, 182, 182);
+    margin-top: -20px;
+}
+.chatbox-message-dropdown
+{
+    position: relative;
+}
+.chatbox-message-dropdown-toggle
+{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 2.5rem;
+    height: 2.5rem;
+    font-size: 1.25rem;
+    cursor: pointer;
+    border-radius: 50%;
+}
+.chatbox-message-dropdown-toggle:hover
+{
+    background: rgb(184, 182, 182);
+}
+.chatbox-dropdown-menu.show
+{
+    transform: scale(1);
+}
+.chatbox-dropdown-menu
+{
+    list-style: none;
+    margin: 0;
+    position: absolute;
+    top: 100%;
+    right: 0;
+    background: #fff;
+    padding: 0.5rem 0;
+    width: 120px;
+    box-shadow: .27rem .27rem 1.27rem rgba(0, 0, 0, 1);
+    border-radius: 10px;
+    transform: scale(0);
+    transform-origin: top right;
+    transition: .2s;
+}
+.chatbox-dropdown-menu a
+{
+    font-size: 00.875rem;
+    font-weight: 500;
+    color: #222;
+    text-decoration: none;
+    padding: 0.5rem 1rem;
+    display: block;
+}
+.chatbox-dropdown-menu a:hover
+{
+    background: rgb(184, 182, 182);
+}
+.chatbox-message-content
+{
+    background: rgb(161, 149, 149);
+    padding: 1.5rem;
+    display: flex;
+    flex-direction: column;
+    grid-row-gap: 1rem;
+    max-height: 300px;
+    overflow-y: auto;
+}
+.chatbox-message-item
+{
+    width: 90%;
+    padding: .75rem;
+}
+.chatbox-message-item.sent
+{
+    align-self: flex-end;
+    background: rgb(0, 119, 255);
+    color: #fff;
+    border-radius: .75rem 0 .75rem .75rem;
+    margin: .7rem 0;
+}
+.chatbox-message-item.recieved
+{
+    background: #fff;
+    border-radius: 0 .75rem .75rem .75rem;
+    box-shadow: .27rem .27rem 1.27rem rgba(0, 0, 0, 0.6);
+    margin: .7rem 0;
+}
+.chat-box-message-time
+{
+    float: right;
+    font-size: .75rem;
+    margin-top: .5rem;
+    display: inline-block;
+}
+.chatbox-message-bottom
+{
+    background: #fff;
+    padding: .75rem 1.5rem;
+}
+.chatbox-message-form
+{
+    display: flex;
+    align-items: center;
+    background: rgb(184, 182, 182);
+    border-radius: .5rem;
+    padding: .5rem 1.25rem;
+}
+.chatbox-message-input
+{
+    background: transparent;
+    outline: none;
+    border: none;
+    resize: none;
+    font-size: 1.5rem;
+    scrollbar-width: none;
+}
+.chatbox-message-input::-webkit-scrollbar
+{
+    display: none;
+}
+.chatbox-message-submit
+{
+    font-size: 1.5rem;
+    color: rgb(0, 119, 255);
+    background: transparent;
+    border: none;
+    outline: none;
+    border-radius: .3rem;
+    cursor: pointer;
+}
+.chatbox-message-no-message
+{
+    font-size: 1.1rem;
+    font-weight: 600;
+    text-align: center;
+}
+
+
+@media screen and (max-width: 576px) {
+    .chatbox-message-wrapper {
+        width: calc(100vw - 2rem)
+    }
+    .chatbox-wrapper {
+    bottom: 1rem;
+    right: 1rem;
+    }
+}
